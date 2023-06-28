@@ -1,0 +1,15 @@
+diff --git a/setup.py b/setup.py
+index 9a205ea..b9616eb 100644
+--- a/setup.py
++++ b/setup.py
+@@ -255,8 +255,8 @@ setup(
+     # http://docs.python.org/3.4/distutils/setupscript.html#installing-additional-files
+     data_files=[('jetson_stats', ['services/jtop.service', 'scripts/jtop_env.sh'])],
+     # Install extra scripts
+-    cmdclass={'develop': JTOPDevelopCommand,
+-              'install': JTOPInstallCommand},
++    # cmdclass={'develop': JTOPDevelopCommand,
++    #           'install': JTOPInstallCommand},
+     # The following provide a command called `jtop`
+     entry_points={'console_scripts': [
+         'jtop=jtop.__main__:main',

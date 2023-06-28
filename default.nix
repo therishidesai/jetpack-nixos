@@ -54,6 +54,8 @@ let
     inherit bspSrc l4tVersion;
   };
 
+  jtop = python3.pkgs.callPackage ./jtop.nix {};
+
   python-jetson = python3.pkgs.callPackage ./python-jetson.nix { };
 
   tegra-eeprom-tool = pkgsAarch64.callPackage ./tegra-eeprom-tool.nix { };
@@ -128,6 +130,7 @@ in rec {
   inherit cudaPackages samples;
   inherit flash-tools;
   inherit board-automation; # Allows automation of Orin AGX devkit
+  inherit jtop;
   inherit python-jetson; # Allows automation of Xavier AGX devkit
   inherit tegra-eeprom-tool;
 

@@ -20,6 +20,7 @@ in
     ./nvargus-daemon.nix
     ./flash-script.nix
     ./devices.nix
+    ./jtop.nix
   ];
 
   options = {
