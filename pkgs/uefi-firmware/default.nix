@@ -1,5 +1,5 @@
 { lib, stdenv, buildPackages, fetchFromGitHub, fetchpatch, fetchpatch2,
-  runCommand, edk2, acpica-tools, dtc, python3, bc, imagemagick, unixtools,
+  runCommand, edk2, acpica-tools, dtc, libuuid, python3, bc, imagemagick, unixtools,
   applyPatches, nukeReferences,
   l4tVersion,
 
@@ -116,6 +116,7 @@ let
   edk2-jetson = edk2.overrideAttrs (prev: {
     src = edk2-src;
 
+    nativeBuildInputs = [ libuuid python3 ];
     patches =
       # Remove this one patch (CryptoPkg/OpensslLib: Upgrade OpenSSL to 1.1.1t)
       # present on nixos-23.05, as it will be added in the opensslPatches below
